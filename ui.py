@@ -1,4 +1,4 @@
-# ch 6.2.1 ui.py
+# ch 6.3.1 ui.py
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout, QMessageBox, QPlainTextEdit, QHBoxLayout, QLineEdit, QComboBox)   # QLineEdit, QComboBox 추가
 from PyQt5.QtGui import QIcon   # icon을 추가하기 위한 라이브러리
 from PyQt5 import QtCore        # 모듈 추가
@@ -15,6 +15,8 @@ class View(QWidget):  # QWidget 클래스를 상속받아서 클래스를 정리
 
         self.le1 = QLineEdit('0', self)     # 라인 에디터1 추가
         self.le1.setAlignment(QtCore.Qt.AlignRight)     # 라인 에디터1 문자열 배치 설정
+        self.le1.setFocus(True)     # 포커스 설정
+        self.le1.selectAll()        # 텍스트 전체 선택
 
         self.le2 = QLineEdit('0', self)     # 라인 에디터2 추가
         self.le2.setAlignment(QtCore.Qt.AlignRight)     # 라인 에디터2 문자열 배치 설정
@@ -27,7 +29,7 @@ class View(QWidget):  # QWidget 클래스를 상속받아서 클래스를 정리
         hbox_formular.addWidget(self.cb)
         hbox_formular.addWidget(self.le2)
 
-        self.btn1 = QPushButton('Message', self)    # 버튼추가
+        self.btn1 = QPushButton('Calc', self)       # 버튼 이름 변경
         self.btn2 = QPushButton('Clear', self)      # 버튼 2 추가
 
         hbox = QHBoxLayout()    # 수평 박스 레이아웃을 추가하고 버튼 1, 2 추가
@@ -48,7 +50,7 @@ class View(QWidget):  # QWidget 클래스를 상속받아서 클래스를 정리
         self.resize(256,256)    # 윈도우 사이즈
         self.show()             # 윈도우 화면이 표시되도록 설정
     
-    def activateMessage(self):  # 핸들러 함수 수정 : 메시지가 텍스트 에디트에 출력되도록
+    def setDisplay(self):   # 메서드 이름 변경
         self.te1.appendPlainText("Button clicked!")
 
     def clearMessage(self):     # 버튼 2 핸들러 함수 정의
