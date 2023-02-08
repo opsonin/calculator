@@ -32,8 +32,8 @@ class View(QWidget):  # QWidget 클래스를 상속받아서 클래스를 정리
         self.resize(256,256)    # 윈도우 사이즈
         self.show()             # 윈도우 화면이 표시되도록 설정
     
-    def activateMessage(self):  # 핸들러 함수 수정 : 메시지가 텍스트 에디트에 출력되도록
-        self.te1.appendPlainText("Button clicked!")
+    def activateMessage(self, text):  # 핸들러 함수 수정 : 메시지가 텍스트 에디트에 출력되도록
+        self.te1.appendPlainText(text)
 
     def clearMessage(self):     # 버튼 2 핸들러 함수 정의
         self.te1.clear()
