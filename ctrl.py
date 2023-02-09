@@ -20,10 +20,11 @@ class Control:
                 return f'{num1} * {num2} = {self.pow(num1, num2)}'
             elif operator == '/':
                 return f'{num1} / {num2} = {self.div(num1, num2)}'
-            elif operator == '^':
-                return f'{num1} ^ {num2} = {self.pow(num1, num2)}'
-            elif operator == '%':       # '%'를 입력했을 때 mod 연산 결과를 출력하도록 추가
-                return f'{num1} % {num2} = {self.mod(num1, num2)}'
+# pow와 mod 함수 제거
+#            elif operator == '^':
+#                return f'{num1} ^ {num2} = {self.pow(num1, num2)}'
+#            elif operator == '%':       # '%'를 입력했을 때 mod 연산 결과를 출력하도록 추가
+#                return f'{num1} % {num2} = {self.mod(num1, num2)}'
             else:
                 return "Calculation Error"
         
