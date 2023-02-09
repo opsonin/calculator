@@ -38,9 +38,13 @@ class Control:
 
         return a / b
 
-    def pow(self, a, b):    # 제곱 함수 수정
-        if (a == 0):
-            return 0
-        else:
-            return pow(a, b)
+    def pow(self, a, b):    # 예외처리를 사용하도록 수정
+        try:
+            if (a == 0):
+                raise Exception("Base Error")
+        
+        except Exception as e:            
+            return e
+        
+        return pow(a, b)
         
